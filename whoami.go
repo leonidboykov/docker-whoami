@@ -15,8 +15,8 @@ func main() {
 
 	hostname, _ := os.Hostname()
 
-	http.HandleFunc("/", func(res http.ResponseWriter, req *http.Request) {
-		fmt.Fprintf(res, hostname)
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprintf(w, "%s\n", hostname)
 	})
 
 	log.Fatal(http.ListenAndServe(":"+port, nil))
