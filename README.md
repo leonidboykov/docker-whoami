@@ -6,3 +6,14 @@
 
 Super slim _who am i_ image based on scratch. No overweight base images and
 additional fuctionality.
+
+### Run container
+
+    sudo docker pull leonidboykov/whoami
+    sudo docker run -d --name whoami -p 8080:8080 leonidboykov/whoami
+
+You can also use `PORT` environment variable to specify port.
+
+Check hostname
+
+    curl localhost:8080
