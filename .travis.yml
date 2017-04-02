@@ -6,7 +6,7 @@ script:
 - CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo
 after_success:
 - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-- docker build -f Dockerfile .
+- docker build -f Dockerfile $REPO .
 - docker push $REPO
 env:
   global:
