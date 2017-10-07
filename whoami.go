@@ -1,23 +1,19 @@
 package main
 
 import (
-	"fmt"
-	"log"
 	"net/http"
 	"os"
 )
 
 func main() {
-	port := os.Getenv("PORT")
-	if port == "" {
-		port = "8080"
-	}
-
 	hostname, _ := os.Hostname()
+	hostname += "\n"
+
+	response := []byte(hostname)
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "%s\n", hostname)
+		w.Write(response)
 	})
 
-	log.Fatal(http.ListenAndServe(":"+port, nil))
+	http.ListenAndServe(":8080", nil)
 }

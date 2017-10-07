@@ -1,5 +1,9 @@
+FROM golang:1.9 as builder
+WORKDIR /go/src/github.com/leonidboykov/whoami
+COPY . .
+RUN @CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo github.com/leonidboykov/whoami
+
 FROM scratch
-COPY whoami /
-ENV PORT 8080
+COPY --from=builder /go/src/github.com/leonidboykov/whoami/whoami /
 EXPOSE 8080
 ENTRYPOINT ["/whoami"]
