@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/leonidboykov/whoami.svg?branch=master)](https://travis-ci.org/leonidboykov/whoami)
 [![Go Report Card](https://goreportcard.com/badge/github.com/leonidboykov/whoami)](https://goreportcard.com/report/github.com/leonidboykov/whoami)
+[![Docker Build Status](https://img.shields.io/docker/build/leonidboykov/whoami.svg)](https://hub.docker.com/r/leonidboykov/whoami/)
 [![Layers](https://images.microbadger.com/badges/image/leonidboykov/whoami.svg)](https://microbadger.com/images/leonidboykov/whoami "Get your own image badge on microbadger.com")
 
 <!-- see https://github.com/leonidboykov/whoami for better Markdown rendering -->
